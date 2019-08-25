@@ -49,6 +49,13 @@ public class Complejos {
 		
 		return msj;
 	}
+	//otro metodo EQUALS
+	//@OVERLOAD
+	public boolean equals (Complejos x) {
+		if(this.real==x.real&&this.imag==x.imag) {
+			return true;
+		}else return false;
+	}
 
 //METODO EQUALS
 	@Override
@@ -81,14 +88,24 @@ public class Complejos {
 		return new Complejos(this.real-resta.real,this.imag-resta.imag);
 	}
 
-	//METODO MULTIPLICACION
+	//METODO MULTIPLICACION de dos numeros complejos
 	
 	public Complejos multiplicar(Complejos multi) {
-		double a=this.real;
-		double b=this.imag;
-		double c=multi.real;
-		double d=multi.imag;
+		double r1=this.real;
+		double i1=this.imag;
+		double r2=multi.real;
+		double i2=multi.imag;
 		
-		return new Complejos((a*c)+[-(b*d)], (a*d)+(b*c));
+		return new Complejos((r1*r2)+(-(i1*i2)), (r1*i2)+(i1*r2));
 	}
+	
+	//metodo multiplicacion de un complejo por un escalar
+	//@overload
+	public Complejos Multiplicar(int f) {
+		
+		return new Complejos(this.real*f,this.imag*f);
+	}
+	
+	
+	
 }
