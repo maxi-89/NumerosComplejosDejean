@@ -84,7 +84,11 @@ public class Complejos {
 	//METODO MULTIPLICACION
 	
 	public Complejos multiplicar(Complejos multi) {
+		double a=this.real;
+		double b=this.imag;
+		double c=multi.real;
+		double d=multi.imag;
 		
-		return new Complejos();
+		return new Complejos((a*c)+[-(b*d)], (a*d)+(b*c));
 	}
 }
